@@ -49,27 +49,29 @@
             <div class="w-full text-left flex mb-10">
               <ul class="w-full flex place-content-center md:place-content-end gap-5 mx-auto text-gray-50">        
                 <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" class="days">00</div>
+                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="days"></div>
                   <p class="text-center text-xs mt-2">Days</p>
                 </li>
 
                 <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" class="hours">00</div>
+                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="hours"></div>
                   <p class="text-center text-xs mt-2">Hours</p>
                 </li>
 
                 <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" class="minutes">00</div>
+                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="mins"></div>
                   <p class="text-center text-xs mt-2">Minutes</p>
                 </li>
 
                 <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" class="seconds">00</div>
+                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="secs"></div>
                   <p class="text-center text-xs mt-2">Seconds</p>
                 </li>
-
+                
               </ul>
             </div>
+
+            <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-6xl mb-14 md:-mr-20 text-white md:text-right" id="end"><span class="text-white/70 md:-mr-20"></span></h6>
 
 
             <p class="text-base mb-14 text-gray-200 md:text-right">This site is been updated, so for now we are coming soon, don't worry its going to be a beautiful work, ride on!!</p>
@@ -111,6 +113,38 @@
     </div>    
   </header>  
 
-  <script type="text/javascript" src="javascript/script.js"></script>
+  <script>
+    // The data/time we want to countdown to
+    var countDownDate = new Date("Sept 12, 2022 00:10:52").getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    document.getElementById("days").innerHTML = days + "d "
+    document.getElementById("hours").innerHTML = hours + "h " 
+    document.getElementById("mins").innerHTML = minutes + "m " 
+    document.getElementById("secs").innerHTML = seconds + "s " 
+        
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+  </script>
 </body>
 </html>
