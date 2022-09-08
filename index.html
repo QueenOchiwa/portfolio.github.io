@@ -71,9 +71,6 @@
               </ul>
             </div>
 
-            <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-6xl mb-14 md:-mr-20 text-white md:text-right" id="end"><span class="text-white/70 md:-mr-20"></span></h6>
-
-
             <p class="text-base mb-14 text-gray-200 md:text-right">This site is been updated, so for now we are coming soon, don't worry its going to be a beautiful work, ride on!!</p>
 
             <!-- Social media -->
@@ -138,11 +135,10 @@
     // Display the message when countdown is over
     if (timeleft < 0) {
         clearInterval(myfunc);
-        document.getElementById("days").innerHTML = ""
-        document.getElementById("hours").innerHTML = "" 
-        document.getElementById("mins").innerHTML = ""
-        document.getElementById("secs").innerHTML = ""
-        document.getElementById("end").innerHTML = "TIME UP!!";
+        document.getElementById("days").innerHTML = "00"
+        document.getElementById("hours").innerHTML = "00" 
+        document.getElementById("mins").innerHTML = "00"
+        document.getElementById("secs").innerHTML = "00"
     }
     }, 1000);
   </script>
