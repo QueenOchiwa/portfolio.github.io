@@ -1,146 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comming Soon</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'Montserrat': ['Montserrat'],
-            'Noto-Sans': ['"Noto Sans"'],
-            'Comforter-Brush': ['"Comforter Brush"']
-          }
-        }
-      }
-    }
-  </script>
-  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaRose Developer</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <!--CSS file-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--ICON CDN links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css">
 </head>
+<body>
+    <!--============Navigation Bar=============-->
+    <header>
+        <!--logo-->
+        <a href="" class="logo">LaRose Dev</a>
+        <!--button for responsive device-->
+        <div class='bx bx-menu' id="menu-icon"></div>
 
-<body class="font-Noto-Sans">
+        <!--Menu Items-->
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#novels">Novels</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!--darkmode button-->
+            <div class="bx bx-moon" id="darkmode"></div>
+        </ul>
+    </header>
 
-  
-  <!-- Header -->
-  <header class="w-full h-screen bg-[url('assets/img/pink-rose.jpg')] bg-cover bg-bottom">  
-    <div class="h-full">
-      <div class="flex h-full">
-        <div class="w-full md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
-          <div class="w-full text-center my-auto">
-            <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 my-10 md:text-right">LaRose</h1>
-            <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-6xl mb-14 md:-mr-20 text-white md:text-right">Coming <span class="text-white/70 md:-mr-20">soon</span></h6>
 
-            
-            <!-- Count down -->
-            <div class="w-full text-left flex mb-10">
-              <ul class="w-full flex place-content-center md:place-content-end gap-5 mx-auto text-gray-50">        
-                <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="days"></div>
-                  <p class="text-center text-xs mt-2">Days</p>
-                </li>
 
-                <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="hours"></div>
-                  <p class="text-center text-xs mt-2">Hours</p>
-                </li>
-
-                <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="mins"></div>
-                  <p class="text-center text-xs mt-2">Minutes</p>
-                </li>
-
-                <li>
-                  <div class="font-bold text-white rounded-full border-dotted border-gray-700 border-4 flex items-center justify-center text-2xl lg:text-4xl h-16 lg:h-24 w-16 lg:w-24" id="secs"></div>
-                  <p class="text-center text-xs mt-2">Seconds</p>
-                </li>
-                
-              </ul>
-            </div>
-
-            <p class="text-base mb-14 text-gray-200 md:text-right">This site is been updated, so for now we are coming soon, don't worry its going to be a beautiful work, ride on!!</p>
-
-            <!-- Social media -->
-            <div class="w-full text-left flex mb-5">
-              <ul class="w-full flex place-content-center md:place-content-end gap-10 mx-auto text-gray-500">        
-                <li>
-                  <a href="#" class="text-lg hover:text-amber-500">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="text-lg hover:text-amber-500">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="text-lg hover:text-amber-500">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="text-lg hover:text-amber-500">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-
-              </ul>
-            </div>
-
-          </div>
+    <!--============Home Section===============-->
+    <section class="home" id="home">
+        <div class="social">
+            <a href="https://github.com/QueenOchiwa"><i class='bx bxl-github'></i></a>
+            <a href="https://discord.com/users/893234710665396274"><i class='bx bxl-discord-alt'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100022295183477"><i class='bx bxl-facebook-circle'></i></a>
         </div>
-        <div class="w-0 md:w-5/12 lg:w-1/2"></div>
-      </div>
-    </div>    
-  </header>  
 
-  <script>
-    // The data/time we want to countdown to
-    var countDownDate = new Date("Sept 12, 2022 00:10:52").getTime();
+        <!--Home Image-->
+        <div class="home-img">
+            <img src="./img/image-2.jpg" alt="">
+        </div>
+        <!--Home Content-->
+        <div class="home-text">
+            <span>Hello, I'm</span>
+            <h1>Williams Angel</h1>
+            <h2>Frontend Developer</h2>
+            <h2>& GhostWriter</h2>
+            <p>I can build and design your website for you, and even create a full book out of your ideas, but thats not all i could create flyers or posters just for you.</p>
+            <!--contact button-->
+            <a href="" class="btn">Contact Me</a>
+        </div>
+    </section>
 
-    // Run myfunc every second
-    var myfunc = setInterval(function() {
+    <!--=========== About Section ==========-->
+    <section class="about" id="about">
+        <!--heading-->
+        <div class="heading">
+            <h2>About Me</h2>
+            <span>Introduction</span>
+        </div>
 
-    var now = new Date().getTime();
-    var timeleft = countDownDate - now;
-        
-    // Calculating the days, hours, minutes and seconds left
-    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-        
-    // Result is output to the specific element
-    document.getElementById("days").innerHTML = days + "d "
-    document.getElementById("hours").innerHTML = hours + "h " 
-    document.getElementById("mins").innerHTML = minutes + "m " 
-    document.getElementById("secs").innerHTML = seconds + "s " 
-        
-    // Display the message when countdown is over
-    if (timeleft < 0) {
-        clearInterval(myfunc);
-        document.getElementById("days").innerHTML = "00"
-        document.getElementById("hours").innerHTML = "00" 
-        document.getElementById("mins").innerHTML = "00"
-        document.getElementById("secs").innerHTML = "00"
-    }
-    }, 1000);
-  </script>
+        <!--about content-->
+        <div class="about-container">
+            <!--image-->
+            <div class="about-image">
+                <img src="./img/images/about-pic.jpg" alt="">
+            </div>
+            <!--text-->
+            <div class="about-text">
+                <p>I am a young front end developer and writer, someone who found passion in coding and also loved writing, i started my ghostwriting job 2022 but i am very well proficient in website design and content writing, i started learning how to code since 2021 and started writing since 2018, Currently studying at <a href="https://miu.edu.ng/">Mewar International University Nigeria</a>, my course computer science, want to know more about me? these are my info:</p>
+
+                <!--some information-->
+                <div class="information">
+                    <!--box-1-->
+                    <div class="info-box">
+                        <i class='bx bxs-user'></i>
+                        <span>Williams Angel Adashi</span>
+                    </div>
+                    <!--box-2-->
+                    <div class="info-box">
+                        <i class='bx bxs-phone'></i>
+                        <span>+2349035503190 </span>
+                    </div>
+                    <!--box-3-->
+                    <div class="info-box">
+                        <i class='bx bxl-discord'></i>
+                        <span>larose#3695</span>
+                    </div>
+                    <!--box-4-->
+                    <div class="info-box">
+                        <i class='bx bxs-envelope'></i>
+                        <span>talkwilliams225@gmail.com</span>
+                    </div>
+                </div>
+                <!--btn-->
+                <a href="" class="btn">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!--========== Skills Section ============-->
+    <section class="skills" id="skills">
+        <div class="heading">
+            <h2>Skills</h2>
+            <span>My Skills</span>
+        </div>
+
+        <!--Skills Content-->
+        <div class="skills-container">
+            <div class="bars">
+
+                <!--box-1-->
+                <div class="bars-box">
+                    <h3>HTML</h3>
+                    <span>94%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar html-bar"></div>
+                </div>
+
+                <!--box-2-->
+                <div class="bars-box">
+                    <h3>CSS</h3>
+                    <span>90%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar css-bar"></div>
+                </div>
+
+                <!--box-3-->
+                <div class="bars-box">
+                    <h3>Javascript</h3>
+                    <span>80%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar js-bar"></div>
+                </div>
+
+                <!--box-4-->
+                <div class="bars-box">
+                    <h3>PHP</h3>
+                    <span>30%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar php-bar"></div>
+                </div>
+
+                <!--box-5-->
+                <div class="bars-box">
+                    <h3>Romance</h3>
+                    <span>96%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar rom-bar"></div>
+                </div>
+                
+                <!--box-6-->
+                <div class="bars-box">
+                    <h3>Fantasy</h3>
+                    <span>88%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar fant-bar"></div>
+                </div>
+
+                <!--box-7-->
+                <div class="bars-box">
+                    <h3>Historical Fiction</h3>
+                    <span>80%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar hist-bar"></div>
+                </div>
+
+                <!--box-8-->
+                <div class="bars-box">
+                    <h3>Contemporary</h3>
+                    <span>70%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar cont-bar"></div>
+                </div>
+            </div>
+
+            <!--image-->
+            <div class="skills-img">
+                <img src="./img/images/skills-img.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!--============ Service Box ============-->
+
+    <section class="services" id="services">
+        <div class="heading">
+            <h2>Services</h2>
+            <span>Our Services</span>
+        </div>
+
+        <div class="services-content">
+            <!--box-1-->
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <a href="">Learn More</a>
+            </div>
+            <!--box-2-->
+            <div class="services-box">
+                <i class='bx bxs-pen'></i>
+                <h3>Ghost Writing</h3>
+                <a href="">Learn More</a>
+            </div>
+            <!--box-3-->
+            <div class="services-box">
+                <i class='bx bxs-paint'></i>
+                <h3>Graphic Design</h3>
+                <a href="">Learn More</a>
+            </div>
+            <!--box-4-->
+            <div class="services-box">
+                <i class='bx bxs-palette'></i>
+                <h3>Logo Design</h3>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!--=========== Portfolio Section =========-->
+    <section class="portfolio" id="portfolio">
+        <div class="heading">
+            <h2>Portfolio</h2>
+            <span>Our Recent Works</span>
+        </div>
+
+        <!--portfolio content-->
+        <div class="portfolio-content">
+
+            <div class="portfolio-img">
+                <img src="./img/images/Studio_Project.jpeg" alt="">
+            </div>
+            <div class="portfolio-img">
+                <img src="./img/images/portfolio-img.png" alt="">
+            </div>
+            <div class="portfolio-img">
+                <img src="./img/images/portfolio-img2.png" alt="">
+            </div>
+            <div class="portfolio-img">
+                <img src="./img/images/Screenshot (32).png" alt="">
+            </div>
+            <div class="portfolio-img">
+                <img src="./img/images/tailor4.png" alt="">
+            </div>
+            <div class="portfolio-img">
+                <img src="./img/images/SGN_01_31_2021_1612090278097.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Novels Section ============-->
+    <section class="novels" id="novels">
+        <div class="heading">
+            <h2>Novels</h2>
+            <span>My Previous and On-going Work</span>
+        </div>
+
+        <!-- Novels Content -->
+        <div class="novel-content">
+
+            <div class="novel-container">
+                <div class="imgBox">
+                    <img src="./img/novels/FR.png" alt="">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h2>The Fallen Rose</h2>
+                        <p>Girl returns back in time and saves the medieval era while also falling in love with the vampire king.</p>
+                        <a href="" class="btn">Read Now!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="novel-container">
+                <div class="imgBox">
+                    <img src="./img/novels/MTAMK.png" alt="">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h2>Making The Alpha My King</h2>
+                        <p>Princess of a kingdom flees from her home to live in the city but falls in love with her kingdoms enemy whats the fate of their love?</p>
+                        <a href="" class="btn">Read Now!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="novel-container">
+                <div class="imgBox">
+                    <img src="./img/novels/TCFKYM.png" alt="">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h2>The Cold Fox King Young Miss</h2>
+                        <p>An Assasin is reborn into another womans body and tries to change the way the world saw the former owner of the body, while also falling in love with the fox king.</p>
+                        <a href="" class="btn">Read Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--=========== contact Section ===========-->
+    <section class="contact" id="contact">
+
+        <!--form-->
+        <div class="contact-form">
+            <div class="heading">
+                <h2>Contact</h2>
+                <span>Keep Contact With US</span>
+            </div>
+            <form action="#">
+                <div class="dbl-field">
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Enter Your Name">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Enter Your Email">
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                </div>
+                <div class="message">
+                    <textarea placeholder="Write Your Message" name="message"></textarea>
+                    <i class='bx bxs-message'></i>
+                </div>
+                <div class="button-area">
+                    <button type="submit">Send Message</button>
+                    <span>Sending Your Message...</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--=========== Footer Section ==========-->
+    <div class="footer">
+        <h2>LaRose Developments</h2>
+        <div class="footer-scoial">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-instagram-alt'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-youtube'></i></a>
+        </div>
+    </div>
+    <!--copyright-->
+    <div class="copyright">
+        <p>Created By<a href="">LaRose Development</a> | All Rights Reserved</p>
+    </div>
+
+
+    <!--js file-->
+    <script src="./js/script.js"></script>
 </body>
 </html>
