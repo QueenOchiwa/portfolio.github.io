@@ -26,15 +26,13 @@ statusTxt = document.querySelector(".button-area span");
 
 form.onsubmit = (e) => {
     e.preventDefault(); //prevents from submitting.
+    console.log(e);
     statusTxt.style.color = "rgb(172, 73, 249)";
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest(); //creating new xml object.
     xhr.open("POST", "message.php", true); //sending post request to php file
-    let formData = new FormData(form);
-    formData.append('update', true);//creating new form data obj.
-    xhr.send(formData);
-    xhr.onload = funtcion() { //once ajax is loaded
+    xhr.onload = () => { //once ajax is loaded
         if(xhr.readyState == 4 && xhr.status == 200) { 
             // if ajax response is 200 & ready status is 4 means there is no error.
             let response = xhr.response;//storing ajax response in response var.
@@ -49,5 +47,7 @@ form.onsubmit = (e) => {
             
             statusTxt.innerText = response;
         }
+    let formData = new FormData(form);//creating new form data obj.
+    xhr.send(formData);
     }
 }
