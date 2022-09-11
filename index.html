@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <!--ICON CDN links-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!--============Navigation Bar=============-->
@@ -318,7 +319,7 @@
                 <h2>Contact</h2>
                 <span>Keep Contact With US</span>
             </div>
-            <form action="message.php" method="POST">
+            <form action="https://formspree.io/f/xkneoeqr" method="POST">
                 <div class="dbl-field">
                     <div class="field">
                         <input type="text" name="name" placeholder="Enter Your Name">
@@ -333,6 +334,7 @@
                     <textarea placeholder="Write Your Message" name="message"></textarea>
                     <i class='bx bxs-message'></i>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6LdUBu8hAAAAAGup6T5TV5gqpZBSy0O5K3tT4ee4"></div>
                 <div class="button-area">
                     <button type="submit">Send Message</button>
                     <span>Sending Your Message...</span>
