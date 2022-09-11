@@ -6,7 +6,7 @@
 
     if(!empty($email) && !empty($message)) {
         if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $receiver = "talkwilliams225@gmail.com"; //email receiver adress
+            $receiver = "emailme@larosedev.site"; //email receiver adress
             $subject = "From $name <$email>";
             $body = "Name: $name\nEmail: $email\n\nMessage: $message\n\nRegards,\n$name";
             $sender = "From: $email"; //sender email
