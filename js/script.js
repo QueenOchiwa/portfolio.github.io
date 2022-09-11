@@ -31,7 +31,10 @@ form.onsubmit = (e) => {
 
     let xhr = new XMLHttpRequest(); //creating new xml object.
     xhr.open("POST", "message.php", true); //sending post request to php file
-    xhr.onload = () => { //once ajax is loaded
+    let formData = new FormData(form);
+    formData.append('update', true);//creating new form data obj.
+    xhr.send(formData);
+    xhr.onload = funtcion() { //once ajax is loaded
         if(xhr.readyState == 4 && xhr.status == 200) { 
             // if ajax response is 200 & ready status is 4 means there is no error.
             let response = xhr.response;//storing ajax response in response var.
@@ -47,6 +50,4 @@ form.onsubmit = (e) => {
             statusTxt.innerText = response;
         }
     }
-    let formData = new FormData(form); //creating new form data obj.
-    xhr.send(formData);
 }
