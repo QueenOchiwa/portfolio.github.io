@@ -41,12 +41,7 @@
 
     <!--============Home Section===============-->
     <section class="home" id="home">
-        <div class="social">
-            <a href="https://github.com/QueenOchiwa"><i class='bx bxl-github'></i></a>
-            <a href="https://discord.com/users/893234710665396274"><i class='bx bxl-discord-alt'></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100022295183477"><i class='bx bxl-facebook-circle'></i></a>
-        </div>
-
+        
         <!--Home Image-->
         <div class="home-img">
             <img src="./img/image-2.jpg" alt="">
@@ -79,7 +74,7 @@
             </div>
             <!--text-->
             <div class="about-text">
-                <p>I am a young front end developer and writer, someone who found passion in coding and also loved writing, i started my ghostwriting job 2022 but i am very well proficient in website design and content writing, i started learning how to code since 2021 and started writing since 2018, Currently studying at <a href="https://miu.edu.ng/">Mewar International University Nigeria</a>, my course computer science, want to know more about me? these are my info:</p>
+                <p>I am a young front end developer and writer, someone who found passion in coding and also loved writing, i started my ghostwriting job 2022 but i am very well proficient in website design and content writing. I started learning how to code since 2021 and started writing since 2018. Currently, studying at <a href="https://miu.edu.ng/">Mewar International University Nigeria</a>and my course computer science, want to know more about me? these are my info:</p>
 
                 <!--some information-->
                 <div class="information">
@@ -155,7 +150,7 @@
 
                 <!--box-5-->
                 <div class="bars-box">
-                    <h3>Romance</h3>
+                    <h3>Romance Novels</h3>
                     <span>96%</span>
                     <div class="light-bar"></div>
                     <div class="percent-bar rom-bar"></div>
@@ -163,7 +158,7 @@
                 
                 <!--box-6-->
                 <div class="bars-box">
-                    <h3>Fantasy</h3>
+                    <h3>Fantasy Novels</h3>
                     <span>88%</span>
                     <div class="light-bar"></div>
                     <div class="percent-bar fant-bar"></div>
@@ -171,7 +166,7 @@
 
                 <!--box-7-->
                 <div class="bars-box">
-                    <h3>Historical Fiction</h3>
+                    <h3>Historical Fiction Novels</h3>
                     <span>80%</span>
                     <div class="light-bar"></div>
                     <div class="percent-bar hist-bar"></div>
@@ -179,7 +174,7 @@
 
                 <!--box-8-->
                 <div class="bars-box">
-                    <h3>Contemporary</h3>
+                    <h3>Contemporary Novels</h3>
                     <span>70%</span>
                     <div class="light-bar"></div>
                     <div class="percent-bar cont-bar"></div>
@@ -318,7 +313,7 @@
                 <h2>Contact</h2>
                 <span>Keep Contact With US</span>
             </div>
-            <form id="form" action="https://formspree.io/f/xkneoeqr" method="POST">
+            <form action="https://formspree.io/f/xkneoeqr" method="POST">
                 <div class="dbl-field">
                     <div class="field">
                         <input type="text" name="name" placeholder="Enter Your Name">
@@ -345,10 +340,9 @@
     <div class="footer">
         <h2>LaRose Developments</h2>
         <div class="footer-scoial">
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-instagram-alt'></i></a>
-            <a href=""><i class='bx bxl-twitter'></i></a>
-            <a href=""><i class='bx bxl-youtube'></i></a>
+            <a href="https://github.com/QueenOchiwa"><i class='bx bxl-github'></i></a>
+            <a href="https://discord.com/users/893234710665396274"><i class='bx bxl-discord-alt'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100022295183477"><i class='bx bxl-facebook-circle'></i></a>
         </div>
     </div>
     <!--copyright-->
@@ -356,38 +350,6 @@
         <p>Created By<a href="">LaRose Development</a> | All Rights Reserved</p>
     </div>
 
-    <script>
-        var form = document.getElementById("form"),
-        statusTxt = document.querySelector(".button-area span");
-
-        async function handleSubmit(event) {
-          event.preventDefault();
-          var data = new FormData(event.target);
-          fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-          }).then(response => {
-            if (response.ok) {
-              statusTxt.innerHTML = "Thanks for your submission!";
-              form.reset()
-            } else {
-              response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                  statusTxt.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                } else {
-                  statusTxt.innerHTML = "Oops! There was a problem submitting your form"
-                }
-              })
-            }
-          }).catch(error => {
-            statusTxt.innerHTML = "Oops! There was a problem submitting your form"
-          });
-        }
-        form.addEventListener("submit", handleSubmit)
-    </script>
     <!--js file-->
     <script src="./js/script.js"></script>
 </body>
