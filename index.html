@@ -318,7 +318,7 @@
                 <h2>Contact</h2>
                 <span>Keep Contact With US</span>
             </div>
-            <form action="https://formspree.io/f/xkneoeqr" method="post">
+            <form id="form" action="https://formspree.io/f/xkneoeqr" method="POST">
                 <div class="dbl-field">
                     <div class="field">
                         <input type="text" name="name" placeholder="Enter Your Name">
@@ -356,7 +356,38 @@
         <p>Created By<a href="">LaRose Development</a> | All Rights Reserved</p>
     </div>
 
+    <script>
+        var form = document.getElementById("form"),
+        statusTxt = document.querySelector(".button-area span");
 
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              statusTxt.innerHTML = "Thanks for your submission!";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  statusTxt.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  statusTxt.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            statusTxt.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
     <!--js file-->
     <script src="./js/script.js"></script>
 </body>
